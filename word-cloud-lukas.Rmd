@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r}
@@ -11,7 +11,7 @@ output:
 ############################################
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, message = FALSE}
 library(tidyverse)
 library(wordcloud2)
 library(colorspace)
@@ -19,7 +19,7 @@ library(webshot)
 library(htmlwidgets)
 ```
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning = FALSE}
 wor <- read.table("word-cloud-2.txt", sep = ",", strip.white = TRUE, encoding = )
 word <- gather(wor)
 words <- word %>% select(-key) %>% slice(rep(1:n(), each = 10)) %>% 

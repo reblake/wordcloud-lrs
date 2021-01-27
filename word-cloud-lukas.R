@@ -17,7 +17,7 @@ words <- word %>% select(-key) %>% slice(rep(1:n(), each = 10)) %>%
 figPath <- file.path("Heart.png")
 
 Hawaii <- sequential_hcl(198, palette = "Hawaii")  
-Batlow <- sequential_hcl(210, palette = "Batlow")  
+Batlow <- sequential_hcl(211, palette = "Batlow")  
 Batlow1 <- rev(Batlow)
 
 # make word cloud
@@ -28,6 +28,9 @@ wc
 saveWidget(wc,"tmp.html", selfcontained = F)
 webshot("tmp.html","first-cloud.pdf", delay = 5, vwidth = 480, vheight=480)
 
+png("wordcloud-1.png", width=800, height=800)
+# make the plot
+dev.off()
 #
 # hcl_palettes("Sequential (multi-hue)", n = 22, plot = TRUE)
 # sequential_hcl(22, palette = "Batlow")  
