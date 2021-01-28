@@ -28,7 +28,7 @@ words <- word %>% select(-key) %>% slice(rep(1:n(), each = 10)) %>%
 figPath <- file.path("Heart.png")
 
 Hawaii <- sequential_hcl(198, palette = "Hawaii")  
-Batlow <- sequential_hcl(212, palette = "Batlow")  
+Batlow <- sequential_hcl(215, palette = "Batlow")  
 Batlow1 <- rev(Batlow)
 ```
 
@@ -41,7 +41,7 @@ wc
 ```{r, eval = FALSE, echo = FALSE}
 # save word cloud
 saveWidget(wc,"tmp.html", selfcontained = F)
-webshot("tmp.html","first-cloud.pdf", delay = 5, vwidth = 480, vheight=480)
+webshot("tmp.html","first-cloud.pdf", delay = 5, vwidth = 800, vheight=800)
 ```
 
 ```{r, eval = FALSE, echo = FALSE}
