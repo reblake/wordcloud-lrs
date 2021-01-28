@@ -1,10 +1,11 @@
 ---
+title: "Word Cloud 2 Project"
 output:
   html_document: default
   pdf_document: default
 ---
 
-```{r}
+```{r, eval = FALSE}
 ############################################
 ### Word Cloud 2 project
 ### Rachael Blake, January 2021
@@ -49,8 +50,11 @@ webshot("tmp.html","first-cloud.pdf", delay = 5, vwidth = 480, vheight=480)
 # sequential_hcl(22, palette = "Batlow")  
 
 figPath2 <- system.file("examples/t.png", package = "wordcloud2")
-tw <- wordcloud2(data = demoFreq, figPath = figPath2, color = "random-light", shuffle = FALSE)
+tw <- wordcloud2(data = demoFreq, figPath = figPath2, color = "random-dark", shuffle = FALSE)
 tw
+```
+
+```{r, eval = FALSE, echo = FALSE}
 saveWidget(tw,"tmp.html", selfcontained = F)
 webshot("tmp.html","test-cloud.pdf", delay = 5, vwidth = 480, vheight = 480)
 ```
